@@ -1,7 +1,8 @@
 
 /.vs
 /obj
+/bin
 /src/bin
 /src/obj
-/src/obj
-/src/obj
+/test/ShortestPathFinderTest/bin
+/test/ShortestPathFinderTest/obj
