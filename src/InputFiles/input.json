@@ -1,0 +1,80 @@
+[
+  {
+    "Source": "A",
+    "Destination": "B",
+    "Distance": 4,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "B",
+    "Destination": "F",
+    "Distance": 2,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "F",
+    "Destination": "H",
+    "Distance": 6,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "F",
+    "Destination": "E",
+    "Distance": 3,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "F",
+    "Destination": "G",
+    "Distance": 4,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "E",
+    "Destination": "B",
+    "Distance": 2,
+    "IsBiDirectional": false
+  },
+  {
+    "Source": "E",
+    "Destination": "D",
+    "Distance": 4,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "A",
+    "Destination": "C",
+    "Distance": 6,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "C",
+    "Destination": "D",
+    "Distance": 8,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "D",
+    "Destination": "G",
+    "Distance": 1,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "H",
+    "Destination": "G",
+    "Distance": 5,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "G",
+    "Destination": "I",
+    "Distance": 5,
+    "IsBiDirectional": true
+  },
+  {
+    "Source": "E",
+    "Destination": "I",
+    "Distance": 8,
+    "IsBiDirectional": true
+  }
+]
