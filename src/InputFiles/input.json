@@ -66,15 +66,9 @@
     "IsBiDirectional": true
   },
   {
-    "Source": "G",
-    "Destination": "I",
-    "Distance": 5,
-    "IsBiDirectional": true
-  },
-  {
     "Source": "E",
     "Destination": "I",
     "Distance": 8,
-    "IsBiDirectional": true
+    "IsBiDirectional": false
   }
 ]

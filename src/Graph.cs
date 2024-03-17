@@ -4,8 +4,15 @@ namespace ShortestPathFinder;
 
 public class Graph
 {
+    /// <summary>
+    /// The graph nodes with key as the current node, and the value as the list of adjascent nodes
+    /// </summary>
     private Dictionary<string, List<AdjascentNode>> _graphNodes = new();
 
+    /// <summary>
+    /// Add the list of nodes to the graph nodes to create the graph.
+    /// </summary>
+    /// <param name="nodes"></param>
     private void AddNodesToGraph(List<Node> nodes)
     {
         foreach (Node node in nodes)
@@ -21,6 +28,13 @@ public class Graph
         }
     }
 
+    /// <summary>
+    /// Find the shortest path between two points using Dijikstra's algorithm
+    /// </summary>
+    /// <param name="fromNodeName"></param>
+    /// <param name="toNodeName"></param>
+    /// <param name="nodes"></param>
+    /// <returns></returns>
     public ShortestPathData ShortestPath(string fromNodeName, string toNodeName, List<Node> nodes)
     {
         Dictionary<string, int> dist = new Dictionary<string, int>();
@@ -67,10 +81,4 @@ public class Graph
 
         return new ShortestPathData(dist[toNodeName], paths[toNodeName]);
     }
-
-    public string[] GetAllNodeLabels()
-    {
-        return _graphNodes.Keys.ToArray();
-    }
-
 }
