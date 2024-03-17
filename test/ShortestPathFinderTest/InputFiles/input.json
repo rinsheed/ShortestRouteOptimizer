@@ -76,5 +76,11 @@
     "Destination": "I",
     "Distance": 8,
     "IsBiDirectional": true
+  },
+  {
+    "Source": "I",
+    "Destination": "J",
+    "Distance": 8,
+    "IsBiDirectional": false
   }
 ]

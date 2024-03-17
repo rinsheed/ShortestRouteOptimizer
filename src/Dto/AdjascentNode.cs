@@ -1,15 +1,9 @@
 ﻿namespace ShortestPathFinder.Dto;
 
-public class AdjascentNode : IComparable<AdjascentNode>
+public class AdjascentNode(string destination, int distance) : IComparable<AdjascentNode>
 {
-    public string NodeLabel { get; set; }
-    public int Distance { get; set; }
-
-    public AdjascentNode(string destination, int distance)
-    {
-        NodeLabel = destination;
-        Distance = distance;
-    }
+    public string NodeLabel { get; set; } = destination;
+    public int Distance { get; set; } = distance;
 
     public int CompareTo(AdjascentNode other)
     {

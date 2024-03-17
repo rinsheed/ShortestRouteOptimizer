@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
-using ShortestPathFinder;
 using ShortestPathFinder.Dto;
+
+namespace ShortestPathFinder;
 
 public class Program
 {
@@ -8,11 +9,11 @@ public class Program
     /// The start point of the program.
     /// </summary>
     /// <param name="args"></param>
-    public static void Main(string[] args)
+    public static void Main()
     {
         var inputData = ReadInputFile();
 
-        string[] labels = GetLabelList(inputData.Nodes);
+        string[] labels = Graph.GetLabelList(inputData.Nodes);
 
         Console.WriteLine($"The nodes in the graph is {string.Join(',', labels)}. The labels are case-sensitive.");
         while (true)
@@ -34,7 +35,7 @@ public class Program
 
             Console.WriteLine("Do you want to exit?(Y/N)");
             string loopBreak = Console.ReadLine();
-            if (!string.IsNullOrEmpty(loopBreak) && loopBreak.ToUpper() == "Y")
+            if (!string.IsNullOrEmpty(loopBreak) && loopBreak.Equals("Y", StringComparison.OrdinalIgnoreCase))
             {
                 break;
             }
@@ -88,8 +89,8 @@ public class Program
         // Specify the relative path to your JSON file (assuming it's in the same folder)
         string filePath = Path.Combine(GetDirectory(), "input.json");
 
-        Graph graph = new Graph();
-        List<Node> graphNodes = new List<Node>();
+        Graph graph = new();
+        List<Node> graphNodes = [];
         try
         {
             string jsonData = File.ReadAllText(filePath);
@@ -116,18 +117,5 @@ public class Program
             throw;
         }
         return (graph, graphNodes);
-    }
-
-    /// <summary>
-    /// Get the list of available nodes
-    /// </summary>
-    /// <param name="nodes"></param>
-    /// <returns></returns>
-    private static string[] GetLabelList(List<Node> nodes)
-    {
-        List<string> labelList = nodes.Select(x => x.Source).Distinct().ToList();
-        labelList.AddRange(nodes.Where(x => !labelList.Contains(x.Destination)).Select(x => x.Destination));
-        labelList = labelList.Distinct().ToList();
-        return labelList.ToArray();
     }
 }
